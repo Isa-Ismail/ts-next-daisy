@@ -16,7 +16,7 @@ const Home = () => {
               <div className="max-w-md">
             <h1 className="text-5xl font-bold">Ts next Daisy 👌🤖 { page }</h1>
                 <p className="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
-                <button className="btn btn-primary">Get Started</button>
+                <button className="btn btn-outline btn-accent">Get Started</button>
               </div>
             </div>
           </div>
