@@ -7,7 +7,7 @@ const Home = () => {
 
   useEffect(() => {
 
-  })
+  }, [])
 
   return (
     <div className='min-h-screen'>
