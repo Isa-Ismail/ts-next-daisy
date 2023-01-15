@@ -33,14 +33,14 @@ const Home = () => {
   let name: string = 'name'
   
   useEffect(() => {
-    fetch('https://jsonplaceholder.typicode.com/todos/1').then(res => res.json()).then(data => {
-      setForm(data)
+    fetch('https://selise.vercel.app/api/products').then(res => res.json()).then(data => {
+      console.log(data)
     })
   }, [])
 
   console.log(form)
 
-  return (<div className='min-h-screen'>
+  return (<div>
                 <div className="hero min-h-screen bg-base-200">
                   <div className="hero-content text-center">
                     <div className="max-w-md">
