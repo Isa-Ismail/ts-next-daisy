@@ -1,45 +1,33 @@
 import { createContext, useReducer } from "react";
+import { Action, CartItem, State } from "./types";
 
 export const Store = createContext<any>({});
 
-interface state {
-    darkMode: boolean;
-    cart: {
-        cartItems: any[];
-    };
-}
-
-interface action {
-    type: string;
-    payload?: any; 
-}
-
-const initialState: state = {
-    darkMode: false,
+const initialState: State = {
+    bought: false,
     cart: {
         cartItems: [],
     },
 };
 
-const reducer = (state: state, action: action) => {
-    const { type, payload } = action;
+const reducer = (state: State, action: Action) => {
+    const { type } = action;
+    const payload = action.payload;
     switch (type) {
-        case "DARK_MODE_ON":
-            return { ...state, darkMode: true };
-        case "DARK_MODE_OFF":
-            return { ...state, darkMode: false };
+        case "TOGGLE":
+            return { ...state, bought: !state.bought };
         case "CART_ADD_ITEM":
-            const item = payload;
+            const item: CartItem = payload;
             const existItem = state.cart.cartItems.find(
-                (x: any) => x.product === item.product
+                (x: CartItem) => x.id === item.id
             );
             if (existItem) {
                 return {
                     ...state,
                     cart: {
                         ...state.cart,
-                        cartItems: state.cart.cartItems.map((x: any) =>
-                            x.product === existItem.product ? item : x
+                        cartItems: state.cart.cartItems.map((x: CartItem) =>
+                            x.id === existItem.id ? item : x
                         ),
                     },
                 };
@@ -58,7 +46,7 @@ const reducer = (state: state, action: action) => {
                 cart: {
                     ...state.cart,
                     cartItems: state.cart.cartItems.filter(
-                        (x: any) => x.product !== payload
+                        (x: CartItem) => x.id !== payload
                     ),
                 },
             };
