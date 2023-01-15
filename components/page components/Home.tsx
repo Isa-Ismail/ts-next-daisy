@@ -1,8 +1,15 @@
 import React from 'react'
 import { useEffect } from 'react';
 import { useState } from 'react';
+import { Store } from '../../utils/store';
 
-const Home = () => {
+interface Props {}
+
+const Home: React.FC<Props> = () => {
+
+  const { state, dispatch } = React.useContext(Store)
+  const { darkMode } = state
+  console.log(darkMode)
 
   const [form, setForm] = useState({
     name: '',
