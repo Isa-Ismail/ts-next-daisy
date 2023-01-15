@@ -3,7 +3,7 @@ import Navbar from "./Header"
 import Footer from "./Footer"
 
 type Props = {
-    title: string;
+    title?: string;
     children?: JSX.Element;
     description?: string;
 };
