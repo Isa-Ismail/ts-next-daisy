@@ -48,11 +48,11 @@ const Home: React.FC<Props> = () => {
   //   })
   // }, [])
   
-  // const custHook = (q: string, s: number) => {
-  //   useEffect(() => {
-  //     setTimeout(() => {setForm({ name: 'adad', email: 'wdwad', password: 'sad' }); console.log('d')}, s)
-  //   }, [])
-  // }
+  const custHook = (q: string, s: number) => {
+    useEffect(() => {
+      setTimeout(() => {setForm({ name: 'adad', email: 'wdwad', password: 'sad' }); console.log('d')}, s)
+    }, [])
+  }
 
   // custHook('dawd', 1000)
 
