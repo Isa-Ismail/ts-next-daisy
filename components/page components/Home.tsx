@@ -42,17 +42,17 @@ const Home: React.FC<Props> = () => {
     })
   }
   
-  // useEffect(() => {
-  //   fetch('https://selise.vercel.app/api/products').then(res => res.json()).then(data => {
-  //     console.log(data)
-  //   })
-  // }, [])
+  useEffect(() => {
+    fetch('https://selise.vercel.app/api/products').then(res => res.json()).then(data => {
+      console.log(data)
+    })
+  }, [])
   
-  const custHook = (q: string, s: number) => {
-    useEffect(() => {
-      setTimeout(() => {setForm({ name: 'adad', email: 'wdwad', password: 'sad' }); console.log('d')}, s)
-    }, [])
-  }
+  // const custHook = (q: string, s: number) => {
+  //   useEffect(() => {
+  //     setTimeout(() => {setForm({ name: 'adad', email: 'wdwad', password: 'sad' }); console.log('d')}, s)
+  //   }, [])
+  // }
 
   // custHook('dawd', 1000)
 
