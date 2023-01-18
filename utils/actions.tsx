@@ -1,6 +1,6 @@
-import { CartItem } from "./types";
+import { CartAdd, CartItem } from "./types";
 
-export const addCart = (product: CartItem, qty: number): {type:string, payload: CartItem} => {
+export const addCart = (product: CartItem, qty: number): CartAdd => {
     return {
         type: "CART_ADD_ITEM",
         payload: {

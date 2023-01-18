@@ -47,6 +47,14 @@ const Home: React.FC<Props> = () => {
   //     console.log(data)
   //   })
   // }, [])
+  
+  // const custHook = (q: string, s: number) => {
+  //   useEffect(() => {
+  //     setTimeout(() => {setForm({ name: 'adad', email: 'wdwad', password: 'sad' }); console.log('d')}, s)
+  //   }, [])
+  // }
+
+  // custHook('dawd', 1000)
 
   return (<div>
                 <div className="hero min-h-screen bg-base-200">
@@ -54,7 +62,7 @@ const Home: React.FC<Props> = () => {
                     <div className="max-w-md">
                         <h1 className="text-5xl font-bold">Ts next Daisy { cart.cartItems&&cart.cartItems[0]&&cart.cartItems[0].id } 👌🤖</h1>
                         <p className="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
-                        <button onClick={()=> dispatch(addCart(product, 10))} className="btn btn-outline btn-accent">Get Started</button>
+                        <button onClick={() => dispatch(addCart(product, 10))} className="btn btn-outline btn-accent">Get Started</button>
                         <button onClick={() => dispatch(toggle())} className="btn btn-outline btn-accent">Toggle to dark mode</button>
                     </div>
                   </div>
