@@ -42,11 +42,11 @@ const Home: React.FC<Props> = () => {
     })
   }
   
-  // useEffect(() => {
-  //   fetch('https://selise.vercel.app/api/products').then(res => res.json()).then(data => {
-  //     console.log(data)
-  //   })
-  // }, [])
+  useEffect(() => {
+    fetch('https://selise.vercel.app/api/products').then(res => res.json()).then(data => {
+      console.log(data)
+    })
+  }, [])
   
   // const custHook = (q: string, s: number) => {
   //   useEffect(() => {
