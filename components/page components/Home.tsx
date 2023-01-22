@@ -44,7 +44,6 @@ const Home: React.FC<Props> = () => {
   }
 
   const data = useFetch('https://selise.vercel.app/api/products')
-  
   console.log(data)
 
   return (<div>
