@@ -2,6 +2,7 @@ import React from 'react'
 import { useEffect } from 'react';
 import { useState } from 'react';
 import { addCart, toggle } from '../../utils/actions';
+import useFetch from '../../utils/hooks/customhooks';
 import { Store } from '../../utils/store';
 import { CartItem } from '../../utils/types';
 
@@ -10,6 +11,8 @@ interface Props {}
 const Home: React.FC<Props> = () => {
 
   const { state, dispatch } = React.useContext(Store)
+
+  console.log(state)
 
   const product: CartItem = {
     id: 1,
@@ -21,8 +24,6 @@ const Home: React.FC<Props> = () => {
   }
   
   const {bought, cart} = state
-  console.log(bought)
-  console.log(cart.cartItems)
 
   const [form, setForm] = useState({
     name: '',
@@ -41,20 +42,10 @@ const Home: React.FC<Props> = () => {
       [e.target.name]: e.target.value
     })
   }
-  
-  useEffect(() => {
-    fetch('https://selise.vercel.app/api/products').then(res => res.json()).then(data => {
-      console.log(data)
-    })
-  }, [])
-  
-  // const custHook = (q: string, s: number) => {
-  //   useEffect(() => {
-  //     setTimeout(() => {setForm({ name: 'adad', email: 'wdwad', password: 'sad' }); console.log('d')}, s)
-  //   }, [])
-  // }
 
-  // custHook('dawd', 1000)
+  const data = useFetch('https://selise.vercel.app/api/products')
+  
+  console.log(data)
 
   return (<div>
                 <div className="hero min-h-screen bg-base-200">

@@ -7,6 +7,16 @@ export interface CartItem {
     qty: number;
 }
 
+export interface name {
+    name: string;
+    alpha: string;
+}
+
+const ad: name = {
+    name: 'name',
+    alpha: 'a'
+}
+
 export interface State {
     bought: boolean;
     cart: {
@@ -38,7 +48,7 @@ interface Name<T> {
 let obj: Name<Form> = {
     fName: 'name',
     lName: {
-        letter: 'a'
+        letter: 'ada'
     }
 }
 
@@ -130,4 +140,13 @@ const funcMockAPIGET = (query: string): Promise<any> => {
     return p
 }
 
-console.log(funcMockAPIGET('wat').then(res => res).then(data => console.log(data)).catch(err=> console.log(err)))
+console.log(funcMockAPIGET('wat').then(res => res).then(data => console.log(data)).catch(err => console.log(err)))
+
+function loggingIdentity<Type>(arg: Type[]): Type[] {
+  console.log(arg.length);
+  return arg;
+}
+
+let assdad: number[] = loggingIdentity<number>([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
+
+console.log(assdad)
