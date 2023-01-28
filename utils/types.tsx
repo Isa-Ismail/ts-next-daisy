@@ -128,8 +128,33 @@ let fruits: string[] = [
     'avocado',
 ]
 
+const mcq: any[] = [
+    {
+        q: 'q',
+        options: [
+            { opt: 'opt', correct: true },
+            { opt: 'opt', correct: false },
+            { opt: 'opt', correct: false },
+            { opt: 'opt', correct: false },
+        ]
+    },
+    {
+        q: 'q',
+        options: [
+            { opt: 'opt', correct: false },
+            { opt: 'opt', correct: false },
+            { opt: 'opt', correct: false },
+            { opt: 'opt', correct: true },
+        ]
+    },
+]
+//write a regex to validate email
+let email: string = ''
+let regex: RegExp = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/
 
-
+// write a regex to validate bangladesh mobile number
+let mobile: string = ''
+let regex2: RegExp = /^(\+88|0088)?01[15-9]\d{8}$/
 
 const funcMockAPIGET = (query: string): Promise<any> => {
     let p = new Promise((resolve, reject) => {
