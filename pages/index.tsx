@@ -9,7 +9,7 @@ export default function index({data}: any) {
   )
 }
 
-export async function getServerSideProps(context: any) {
+export async function getStaticProps(context: any) {
   return {
     props: {
       data: 'hello'

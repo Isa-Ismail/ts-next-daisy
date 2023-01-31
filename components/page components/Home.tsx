@@ -38,10 +38,7 @@ const Home: React.FC<Props> = () => {
   }
 
   const handleChange = (e: any) => {
-    setForm({
-      ...form,
-      [e.target.name]: e.target.value
-    })
+    setForm( prev =>  ({...prev, [e.target.name]: e.target.value}))
   }
 
   const [url, setUrl] = useState('')
