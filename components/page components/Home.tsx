@@ -62,8 +62,7 @@ const Home: React.FC<Props> = () => {
   const data = useFetch('https://selise.vercel.app/api/products')
   console.log(data)
 
-  return (<div>
-                <div className="hero min-h-screen bg-base-200">
+  return (<div className="hero bg-fixed bg-[url('https://res.cloudinary.com/dfffbcsa8/image/upload/v1674718103/ueowjspgfskqqqcaul9s.jpg')] min-h-screen bg-base-200">
                   <div className="hero-content text-center">
                       <div className="max-w-md">
                         {url&&<img src = {url} alt = "image" />}
@@ -74,7 +73,6 @@ const Home: React.FC<Props> = () => {
                         <button onClick={() => dispatch(toggle())} className="btn btn-outline btn-accent">Toggle to dark mode</button>
                     </div>
                   </div>
-              </div>
           </div>)
 }
 
