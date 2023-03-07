@@ -9,10 +9,20 @@ export default function index({data}: any) {
   )
 }
 
-export async function getStaticProps(context: any) {
-  return {
-    props: {
-      data: 'hello'
-    }, // will be passed to the page component as props
-  }
-}
+// export async function getStaticProps(context: any) {
+//   return {
+//     props: {
+//       data: 'hello'
+//     }, // will be passed to the page component as props
+//   }
+// }
+
+// const getStaticProps = async () => {
+//   const res = await fetch('url')
+//   const data = await res.json()
+//   return {
+//     props: {
+//       data
+//     }
+//   }
+// }

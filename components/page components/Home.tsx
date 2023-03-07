@@ -37,6 +37,7 @@ const Home: React.FC<Props> = () => {
     console.log(form)
   }
 
+  const [screen, setScreen] = useState('')
   const handleChange = (e: any) => {
     setForm( prev =>  ({...prev, [e.target.name]: e.target.value}))
   }
@@ -57,19 +58,37 @@ const Home: React.FC<Props> = () => {
   }
 
   const data = useFetch('https://selise.vercel.app/api/products')
-  console.log(data)
 
-  return (<div className="hero min-h-screen bg-base-200">
-                  <div className="hero-content text-center">
+  useEffect(() => { 
+    console.log(data)
+  }, [data])
+
+  return (<div className="min-h-screen flex items-center justify-center">
+              <div className='bg-green-300 h-[10rem] w-[10rem] rounded-lg flex justify-between items-center'>
+                
+                <div>
+                  <h1 className='text-xl'>hello</h1>
+                </div>
+                <div>
+                  <p className="text-lg">
+                          hello
+                        </p>
+                </div>
+            </div>
+                  {/* <div className="hero-content text-center">
                       <div className="max-w-md">
                         {url&&<img src = {url} alt = "image" />}
                         <input type="file" onChange={(e: any) => {  sub(e.target.files[0])}}/>
+                        <input type="text" onChange={(e: any)=> { setScreen(e.target.value)}} />
+                        <br />
+                        <br />
+                        <input type="text" name="name" onChange={(e: any)=> { setForm( {...form, [e.target.name]: e.target.value } )}} />
                         <h1 className="text-5xl font-bold">Ts next Daisy { cart.cartItems&&cart.cartItems[0]&&cart.cartItems[0].id } 👌🤖</h1>
                         <p className="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
                         <button onClick={() => dispatch(addCart(product, 10))} className="btn btn-outline btn-accent">Get Started</button>
                         <button onClick={() => dispatch(toggle())} className="btn btn-outline btn-accent">Toggle to dark mode</button>
                     </div>
-                  </div>
+                  </div> */}
           </div>)
 }
 

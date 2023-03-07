@@ -106,6 +106,29 @@ let page: (string | number)[] = ['hello', 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 let uuid: string | number = 1
 let name: string = 'name'
 
+// genrate 20 fruits in array with random price and quantity
+let f: string[] = [
+    'orange',
+    'apple',
+    'banana',
+    'pineapple',
+    'watermelon',
+    'grape',
+    'mango',
+    'strawberry',
+    'kiwi',
+]
+
+//map those fruits with random price and quantity
+let dd: Arr[] = f.map((item) => {
+    return {
+        name: item,
+        price: Math.floor(Math.random() * 100),
+        quantity: Math.floor(Math.random() * 100)
+    }
+})
+
+
 
 //genrate 20 fruits in array with random price and quantity
 let fruits: string[] = [
@@ -151,6 +174,12 @@ const mcq: any[] = [
 //write a regex to validate email
 let email: string = ''
 let regex: RegExp = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/
+type of<T> = {
+    f: T
+}
+interface off<R> {
+    f: R
+}
 
 // write a regex to validate bangladesh mobile number
 let mobile: string = ''
@@ -175,3 +204,26 @@ function loggingIdentity<Type>(arg: Type[]): Type[] {
 let assdad: number[] = loggingIdentity<number>([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
 
 console.log(assdad)
+
+// set token to local storage
+
+const setToken = (token: string) => {
+    localStorage.setItem('token', token)
+}
+
+//send http request to server with token from local storage
+
+const sendRequest = async (url: string, method: string, body?: any) => {
+    const token = localStorage.getItem('token')
+    const headers = {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${token}`
+    }
+    const res = await fetch(url, {
+        method,
+        headers,
+        body: JSON.stringify(body)
+    })
+    const data = await res.json()
+    return data
+}
