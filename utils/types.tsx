@@ -20,7 +20,7 @@ const ad: name = {
 export interface State {
     bought: boolean;
     cart: {
-        cartItems: CartItem[];
+        cartItems: Array<CartItem>;
     }
 }
 
