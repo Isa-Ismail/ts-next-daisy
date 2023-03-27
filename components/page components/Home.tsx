@@ -1,6 +1,5 @@
 import axios from 'axios';
 import React from 'react'
-import { useEffect } from 'react';
 import { useState } from 'react';
 import { addCart, toggle } from '../../utils/actions';
 import useFetch from '../../utils/hooks/customhooks';
@@ -59,9 +58,8 @@ const Home: React.FC<Props> = () => {
 
   const data = useFetch('https://selise.vercel.app/api/products')
 
-  useEffect(() => { 
-    console.log(data)
-  }, [data])
+  console.log(data)
+
 
   return (<div className="min-h-screen flex items-center justify-center">
                   <div className="hero-content text-center">
