@@ -8,7 +8,6 @@ export default function index({data}: any) {
     </Layout>
   )
 }
-
 export async function getServerSideProps(context: any) {
   return {
     props: {
