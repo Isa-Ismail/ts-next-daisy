@@ -18,7 +18,7 @@ const Header = () => {
   }, [show])
 
   return (
-  <nav className={`${show?"min-h-screen bg-slate-500 shadow-md":"bg-slate-500 shadow-md"}`}>
+  <nav className={`${show?"min-h-[16rem] bg-slate-500 shadow-md fixed z-10 w-screen":"bg-slate-500 shadow-md fixed z-10 w-screen"}`}>
   <div className="lg:flex justify-between">
     <ul className="flex space-x-4 p-4 sm:hidden lg:flex">
       <li className="cursor-pointer p-2 hover:bg-white">Home</li>
@@ -38,7 +38,7 @@ const Header = () => {
     <ul className="space-x-4 p-4 sm:hidden lg:flex">
       <li className="cursor-pointer p-2 hover:bg-white">a</li>
     </ul>
-    {show?<ul className="flex flex-col justify-center">
+    {show?<ul className="flex flex-col justify-center z-20 w-screen items-center">
       <li className="cursor-pointer p-2 hover:bg-white">Home</li>
       <li className="cursor-pointer p-2 hover:bg-white">page 2</li>
       <li className="cursor-pointer p-2 hover:bg-white">page 3</li>
