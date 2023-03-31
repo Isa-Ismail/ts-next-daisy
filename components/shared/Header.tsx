@@ -20,7 +20,7 @@ const Header = () => {
   return (
     <nav className={`${show ? "min-h-[16rem] bg-slate-500 shadow-md fixed z-10 w-screen" : "bg-slate-500 shadow-md fixed z-10 w-screen"}`}>
       
-      <div className="md:flex justify-between p-2">
+      <div className="md:flex justify-between p-2 max-w-[50rem] mx-auto">
         
         <ul className="flex space-x-4 p-4 md:flex sm:hidden">
           
