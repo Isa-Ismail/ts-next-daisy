@@ -1,5 +1,4 @@
 import { useRouter } from 'next/router'
-import React from 'react'
 
 export const getStaticPaths = async () => {
     const res = await fetch('https://selise.vercel.app/api/products')
