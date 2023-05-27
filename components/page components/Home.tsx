@@ -56,7 +56,7 @@ const Home: React.FC<Props> = () => {
       .catch(err => console.log(err))
   }
 
-  const data = useFetch('https://selise.vercel.app/api/products')
+  const data = useFetch('https://ict-6.vercel.app/api/auth')
 
   console.log(data)
 
