@@ -112,11 +112,7 @@ let f: string[] = [
     'apple',
     'banana',
     'pineapple',
-    'watermelon',
-    'grape',
-    'mango',
-    'strawberry',
-    'kiwi',
+    'watermelon'
 ]
 
 //map those fruits with random price and quantity
