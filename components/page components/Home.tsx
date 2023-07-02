@@ -5,6 +5,7 @@ import { addCart, toggle } from '../../utils/actions';
 import useFetch from '../../utils/hooks/customhooks';
 import { Store } from '../../utils/store';
 import { CartItem } from '../../utils/types';
+import { error } from 'console';
 
 interface Props {}
 
@@ -54,7 +55,7 @@ const Home: React.FC<Props> = () => {
     })
       .then(res => res.json())
       .then(data => setUrl(data.url))
-      .catch(err => console.log(err))
+      .catch(error => console.log(error))
   }
 
   const data = useFetch('https://ict-6.vercel.app/api/auth')
