@@ -60,7 +60,7 @@ const Home: React.FC<Props> = () => {
 
   const data = useFetch('https://ict-6.vercel.app/api/auth')
 
-  console.log(form, data)
+  console.log(form)
 
   return (
     <div className="min-h-screen flex items-center justify-center">
