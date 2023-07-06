@@ -21,7 +21,7 @@ const Home: React.FC<Props> = () => {
     image: 'image',
     price: 1,
     countInStock: 1,
-    qty: 1,
+    qty: 2,
   }
   
   const {bought, cart} = state
