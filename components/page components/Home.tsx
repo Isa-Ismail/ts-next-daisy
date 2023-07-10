@@ -13,8 +13,6 @@ const Home: React.FC<Props> = () => {
 
   const { state, dispatch } = React.useContext(Store)
 
-  console.log(state)
-
   const product: CartItem = {
     id: 1,
     name: 'name',
