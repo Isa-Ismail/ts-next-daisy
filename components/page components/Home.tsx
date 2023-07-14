@@ -58,16 +58,16 @@ const Home: React.FC<Props> = () => {
 
   const data = useFetch('https://ict-6.vercel.app/api/auth')
 
-  console.log(form)
+  console.log(data)
 
   return (
-    <div className="min-h-screen flex items-center justify-center">
+    <div className="min-h-screen flex justify-center items-center">
       <div className="hero-content text-center">
         <div className="max-w-md">
           {url && <img src={url} alt="image" />}
           <label htmlFor="pic" className="btn btn-outline btn-accent">Upload</label>
           <input id='pic' style={{display: "none"}} type="file" onChange={(e: any) => { sub(e.target.files[0]) }} />              
-          <input type="text" onChange={(e: any) => { setScreen(e.target.value) }} />
+          <input type="text" className='border-2 p-2 m-2 border-black rounded-md' onChange={(e: any) => { setScreen(e.target.value) }} />
           <br />
           <br />
           <input type="text" name="email" value={form.email} onChange={handleChange} />
